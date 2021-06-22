@@ -82,6 +82,7 @@ input, button, .button {
     clip-path: circle();
     /* fixed fica em cima de tudo */
     position: fixed;
+    opacity: .1;
 }
 
 .ball.top {
