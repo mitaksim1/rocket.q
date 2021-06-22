@@ -85,7 +85,10 @@ input, button, .button {
 }
 
 .ball.top {
-
+    top: -46rem;
+    width: 63.3rem;
+    right: -35rem;
+    height: 63.3rem;
 }
 
 .ball.bottom {
