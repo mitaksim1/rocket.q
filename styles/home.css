@@ -16,7 +16,7 @@ header {
 
 #bg {
     grid-area: left;
-    background: url('https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e556cbcc-273c-49c1-b000-9b8eace06903/home-bg-img.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210622%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210622T082528Z&X-Amz-Expires=86400&X-Amz-Signature=ca242982ee19c92243dbfa06321b9050660e2e12e7239b77e6648280691b360f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22home-bg-img.svg%22') no-repeat top/contain;
+    background: url(../assets/home-bg-img.svg) no-repeat top/contain;
     background-position-x: -10rem;
 }
 
@@ -42,6 +42,7 @@ main h2 {
 input {
     border: .2rem solid var(--grey-blue);
     padding: 0 1.6rem;
+    outline: none;
 }
 
 input, button, .button {
