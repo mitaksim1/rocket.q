@@ -9,6 +9,8 @@ const server = express();
 // Set o view engine que vamos utilisar
 server.set('view engine', 'ejs');
 
+server.use(express.static("public"));
+
 // Set o caminho da pasta onde estao nossos templates para que o esj os encontre
 server.set('views', path.join(__dirname, 'views'));
 
