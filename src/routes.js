@@ -7,9 +7,9 @@ const questionController = require('./controllers/QuestionController.js');
 const routes = express.Router();
 
 // Definimos nossa rota
-routes.get('/', (req, res) => res.render("index"));
+routes.get('/', (req, res) => res.render("index", {page: 'enter-room'}));
+routes.get('/create-pass', (req, res) => res.render("index", {page: 'create-pass'}));
 routes.get('/room', (req, res) => res.render("room"));
-routes.get('/create-pass', (req, res) => res.render("create-pass"));
 // Formato esperado pelo formulario da modal
 routes.post('/room/:room/:question/:action', questionController.index);
 
