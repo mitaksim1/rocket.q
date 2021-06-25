@@ -14,7 +14,11 @@ server.use(express.static("public"));
 // Set o caminho da pasta onde estao nossos templates para que o esj os encontre
 server.set('views', path.join(__dirname, 'views'));
 
-// pedimos pro express usar o arquivo de rotas
+// Middleware entre a rota e o controller
+// Express vai pegar os dados e retranscri-los para que eles cheguem até o controller
+server.use(express.urlencoded({extended: true}));
+
+// Pedimos pro express usar o arquivo de rotas
 server.use(route);
 
 // Pedimos pro servidor escutar na porta 3000
