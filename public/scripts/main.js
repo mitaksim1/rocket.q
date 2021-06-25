@@ -32,9 +32,11 @@ function handleClick(event, check = true) {
     // Recupera o codigo da sala
     const roomId = document.querySelector("#room-id").dataset.id;
 
+    const questionId = event.target.dataset.id;
+
     // Atribui à propriedade action do form a seguinte URL
     const form = document.querySelector('.modal form');
-    form.setAttribute("action", `room/${roomId}/:question/${action}`);
+    form.setAttribute("action", `room/${roomId}/${questionId}/${action}`);
 
     const text = check ? "Marcar como lida" : "Excluir";
 
