@@ -26,12 +26,15 @@ deleteButton.forEach(button => {
 function handleClick(event, check = true) {
     event.preventDefault();
 
+    // Recupera a açao da url
+    const action = check ? "check" : "delete";
+
     // Recupera o codigo da sala
     const roomId = document.querySelector("#room-id").dataset.id;
 
     // Atribui à propriedade action do form a seguinte URL
     const form = document.querySelector('.modal form');
-    form.setAttribute("action", `room/${roomId}/:question/:action`);
+    form.setAttribute("action", `room/${roomId}/:question/${action}`);
 
     const text = check ? "Marcar como lida" : "Excluir";
 
