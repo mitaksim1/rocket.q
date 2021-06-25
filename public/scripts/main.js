@@ -35,6 +35,9 @@ function handleClick(event, check = true) {
     // Altera a mensagem do botao
     modalButton.innerHTML = `Sim, ${text.toLowerCase()}`;
 
+    // Altera a cor do botao
+    check ? modalButton.classList.remove("red") : modalButton.classList.add("red");
+
     // Abrir modal
     modal.open();
 }
