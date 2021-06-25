@@ -12,5 +12,13 @@ checkButtons.forEach(button => {
     });
 });
 
+// Abertura da modal ao clique no botao "Excluir"
+const deleteButton = document.querySelectorAll(".actions a.delete");
+deleteButton.forEach(button => {
+    button.addEventListener("click", event => {
+        modal.open();
+    })
+})
+
 // Se o "Marcar como lida" for clicado
 
