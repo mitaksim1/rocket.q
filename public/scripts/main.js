@@ -32,6 +32,9 @@ function handleClick(event, check = true) {
     // Altera a descriçao
     modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta?`;
 
+    // Altera a mensagem do botao
+    modalButton.innerHTML = `Sim, ${text.toLowerCase()}`;
+
     // Abrir modal
     modal.open();
 }
