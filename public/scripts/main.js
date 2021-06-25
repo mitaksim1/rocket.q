@@ -19,10 +19,13 @@ checkButtons.forEach(button => {
 // Abertura da modal ao clique no botao "Excluir"
 const deleteButton = document.querySelectorAll(".actions a.delete");
 deleteButton.forEach(button => {
-    button.addEventListener("click", handleClick);
+    button.addEventListener("click", (event) => handleClick(event, false));
 });
 
-function handleClick(event) {
+function handleClick(event, check = true) {
+    // Altera o titulo
+    modalTitle.innerHTML = check ? "Marcar como lida" : "Excluir essa pergunta";
+
     // Abrir modal
     modal.open();
 }
