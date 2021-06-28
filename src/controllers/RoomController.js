@@ -5,12 +5,14 @@ module.exports = {
         const db = await Database();
         // Recuperamos a senha digitada no formulario
         const pass = req.body.password;
-        let roomId= '';
+        let roomId;
         let isRoom = true;
 
         while(isRoom) {
              // Gera o numero da sala
             for (let i = 0; i < 6; i++) {
+                // Ternario que  vai impedir um id que comece com 0
+                i == 0 ? roomId = Math.floor(Math.random() * 10).toString() :
                 roomId += Math.floor(Math.random() * 10).toString();
             }
             // Verifica se o numero randômico criado ja existe
