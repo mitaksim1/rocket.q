@@ -78,14 +78,15 @@
                             </div>    
                         <% }); %>
                     
-
+                        <!-- Mostra as perguntas que foram marcadas como lidas --> 
+                        <% questionsRead.forEach(questionRead => { %>  
                         <div class="question-wrapper read">
                             <div class="question-content">
                                 <div class="user">
                                     <img src="/images/user.svg" alt="Avatar">
                                 </div>
                                 <div class="question">
-                                    <p>O que é Typescript?</p>
+                                    <p><%= questionRead.title %></p>
                                 </div>
                             </div>
                             <div class="actions">
@@ -98,6 +99,7 @@
                                     Excluir
                                 </a>
                             </div>
+                            <% }); %>
                         </div>                        
                     </div>
                 </section>
