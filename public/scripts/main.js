@@ -36,7 +36,7 @@ function handleClick(event, check = true) {
 
     // Atribui à propriedade action do form a seguinte URL
     const form = document.querySelector('.modal form');
-    form.setAttribute("action", `room/${roomId}/${questionId}/${action}`);
+    form.setAttribute("action", `question/${roomId}/${questionId}/${action}`);
 
     const text = check ? "Marcar como lida" : "Excluir";
 
