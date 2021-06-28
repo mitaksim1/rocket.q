@@ -39,9 +39,15 @@ module.exports = {
     }, 
 
     // Renderiza a sala com o id
-    open(req, res) {
+    async open(req, res) {
+        const db = await Database();
+        
         // Recuperamos o id da sala
         const roomId = req.params.id;
-        res.render("room", {roomId: roomId});
+        
+        // Recupera todas as perguntas se o id da sala corresponde com o id passado na url
+        const questions = await db.all(`SELECT * FROM questions WHERE room = ${roomId}`);
+
+        res.render("room", {roomId: roomId, questions: questions});
     }
 }
