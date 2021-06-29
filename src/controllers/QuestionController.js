@@ -7,24 +7,26 @@ module.exports = {
         const roomId = req.params.room;
         const questionId = req.params.question;
         const action = req.params.action;
-       // password nos recuperamos no nome que demos ao input
-       const password = req.body.password;
+        // password nos recuperamos no nome que demos ao input
+        const password = req.body.password;
 
-       // Recupera uma unica resposta que corresponda com o id passado
-       const verifyRoom = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`);
+        // Recupera uma unica resposta que corresponda com o id passado
+        const verifyRoom = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`);
 
-       if (verifyRoom.pass == password) {
+        if (verifyRoom.pass == password) {
             if (action == "delete") {
                // Apaga a pergunta que corresponda ao id registrado na base
                 await db.run(`DELETE FROM questions WHERE id = ${questionId}`);
-
+               
             } else if (action == "check") {
-
+               
                 await db.run(`UPDATE questions SET read = 1 WHERE id = ${questionId}`);
-
+               
             }
-       }
-       res.redirect(`/room/${roomId}`);
+            res.redirect(`/room/${roomId}`);
+        } else {
+            res.render('passIncorrect', {roomId: roomId});
+        }    
     },
 
     async create(req, res) {
