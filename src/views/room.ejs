@@ -54,6 +54,10 @@
                 <section id="questions">
                     <h2 class="sr-only">Perguntas da comunidade</h2>
                     <div class="questions">
+                        <!-- Açao a fazer se nao tiver perguntas -->
+                        <% if (isNoQuestions) { %>
+                            <%- include('parts/no-question') %>
+                        <% }; %>
                         <!-- Mostra as questoes pra uma sala segundo o id passado na url -->
                         <% questions.forEach(question => { %>
                             <div class="question-wrapper">
